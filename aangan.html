@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aangan — Ghar ka swaad, aapke sheher mein</title>
+<meta name="description" content="Fresh homemade meals from local home cooks in Bhilai. Ghar jaisa khana, ghar se.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--terra:#C85C3A;--btn:#B24A2A;--sage:#7A9E7E;--sageD:#4E7352;--gold:#E7B84B;--bg:#FFF8ED;--card:#FFFFFF;--ink:#242424;--mut:#6b625a;--line:#eadfcc;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
+:root:not([data-theme="light"]){}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d1a16;--card:#282420;--ink:#f4ecdf;--mut:#b7ab9c;--line:#3a342d;--sageD:#9cc3a0}}
+:root[data-theme="dark"]{--bg:#1d1a16;--card:#282420;--ink:#f4ecdf;--mut:#b7ab9c;--line:#3a342d;--sageD:#9cc3a0}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*:before,*:after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Poppins,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55;padding-bottom:86px}
+h1,h2,h3{line-height:1.15;margin:0;font-weight:700;letter-spacing:-.01em}
+h1{font-size:clamp(2.1rem,7vw,3.9rem);font-weight:800}
+h2{font-size:clamp(1.5rem,4.4vw,2.3rem)}h3{font-size:1.05rem}
+p{margin:.4rem 0}a{color:inherit}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 18px}
+section{padding:46px 0}
+.sub{color:var(--mut);max-width:56ch}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:14px;height:62px}
+.logo{font-weight:800;font-size:1.35rem;color:var(--terra);cursor:pointer;background:none;border:0;padding:0}
+.logo small{display:block;font-size:.58rem;font-weight:500;color:var(--mut);margin-top:-6px}
+nav.top{display:none;gap:4px;margin-left:auto}
+nav.top button{background:none;border:0;padding:8px 12px;border-radius:99px;cursor:pointer;font-weight:500}
+nav.top button:hover,nav.top button.on{background:var(--line)}
+.btn{background:var(--btn);color:#fff;border:0;border-radius:99px;padding:12px 22px;font-weight:600;cursor:pointer;transition:transform .15s}
+.btn:hover{transform:translateY(-1px)}.btn:active{transform:scale(.97)}
+.btn.alt{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+.btn.sm{padding:7px 14px;font-size:.85rem}
+.cartb{margin-left:auto;position:relative}
+@media(min-width:800px){nav.top{display:flex}.cartb{margin-left:0}}
+.hero{display:grid;gap:30px;align-items:center;padding:34px 0 20px}
+@media(min-width:860px){.hero{grid-template-columns:1.15fr .85fr}}
+.hero .hl{color:var(--terra)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}
+.thali{position:relative;width:min(84vw,380px);aspect-ratio:1;margin:0 auto;border-radius:50%;background:radial-gradient(circle at 35% 30%,#f7f1e4,#d9cdb6 70%);box-shadow:0 20px 50px rgba(120,70,30,.28),inset 0 0 0 10px #e9dfca,inset 0 0 0 14px #c9bb9f;animation:fl 6s ease-in-out infinite}
+.thali i{position:absolute;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:2rem;box-shadow:inset 0 -6px 10px rgba(0,0,0,.18),0 3px 6px rgba(0,0,0,.2)}
+.thali i:nth-child(1){width:34%;height:34%;left:10%;top:14%;background:#E7B84B}
+.thali i:nth-child(2){width:30%;height:30%;right:10%;top:12%;background:#7A9E7E}
+.thali i:nth-child(3){width:30%;height:30%;left:8%;bottom:14%;background:#C85C3A}
+.thali i:nth-child(4){width:34%;height:34%;right:9%;bottom:12%;background:#f3e6c8}
+.thali b{position:absolute;inset:38% 34%;display:grid;place-items:center;font-size:2.4rem;background:#fff8e6;border-radius:50%;box-shadow:inset 0 -5px 8px rgba(0,0,0,.15)}
+@keyframes fl{50%{transform:translateY(-10px) rotate(2deg)}}
+.search{display:flex;flex-wrap:wrap;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:8px;box-shadow:0 6px 20px rgba(120,70,30,.08)}
+.search input,.search select{flex:1 1 180px;border:0;background:transparent;padding:10px 12px;min-width:0}
+.search select{flex:0 1 170px;border-left:1px solid var(--line)}
+.search select option{color:#242424}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));margin-top:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.card .pic{height:130px;display:grid;place-items:center;font-size:3.4rem;position:relative}
+.card .pic span.bd{position:absolute;left:10px;top:10px;font-size:.68rem;font-weight:600;background:rgba(255,255,255,.92);color:#4E7352;padding:2px 9px;border-radius:99px}
+.card .bd2{padding:14px;display:flex;flex-direction:column;gap:6px;flex:1}
+.row{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.meta{font-size:.8rem;color:var(--mut)}
+.veg{width:14px;height:14px;border:2px solid #2e8b3d;display:inline-grid;place-items:center;border-radius:3px;flex:none}
+.veg:after{content:"";width:6px;height:6px;border-radius:50%;background:#2e8b3d}
+.veg.nv{border-color:#b3261e}.veg.nv:after{background:#b3261e}
+.price{font-weight:700;font-size:1.1rem}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:4px 0 8px;scrollbar-width:none}
+.chip{flex:none;border:1.5px solid var(--line);background:var(--card);border-radius:99px;padding:6px 14px;cursor:pointer;font-size:.85rem;font-weight:500}
+.chip[aria-pressed=true]{background:var(--sage);border-color:var(--sage);color:#10240f}
+.steps{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:20px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px}
+.step .ic{font-size:1.8rem}
+.two{display:grid;gap:18px}@media(min-width:800px){.two{grid-template-columns:1fr 1fr}}
+.band{background:var(--terra);color:#fff;border-radius:28px;padding:34px 24px}
+.band .btn{background:#fff;color:#7a2f16}
+.story{background:linear-gradient(135deg,#f4e3c4,#e8efe3);color:#242424;border-radius:20px;padding:20px}
+.story q{display:block;font-size:1.05rem;font-weight:500;margin:8px 0}
+.plans{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:18px}
+.plan{background:var(--card);border:2px solid var(--line);border-radius:20px;padding:20px}
+.plan.pop{border-color:var(--terra)}
+.plan ul{padding-left:18px;color:var(--mut);font-size:.9rem}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;background:var(--gold);color:#3a2c00;padding:2px 10px;border-radius:99px}
+.avatar{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;font-size:2rem;background:var(--gold);flex:none}
+.pfh{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 16px;margin:8px 0}
+summary{cursor:pointer;font-weight:600}
+label{display:block;font-weight:500;font-size:.88rem;margin:10px 0 4px}
+.f{width:100%;padding:11px 12px;border-radius:12px;border:1.5px solid var(--line);background:var(--card)}
+.fg{display:grid;gap:0 14px}@media(min-width:700px){.fg{grid-template-columns:1fr 1fr}}
+.stat{display:inline-block;margin-right:16px}.stat b{display:block;font-size:1.2rem}
+.tl{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0}
+.tl span{flex:1 1 90px;text-align:center;font-size:.75rem;padding:8px 4px;border-radius:10px;background:var(--line);color:var(--mut);transition:background .4s}
+.tl span.on{background:var(--sage);color:#10240f;font-weight:600}
+.drawer{position:fixed;inset:0;z-index:40;display:none;background:rgba(0,0,0,.45)}
+.drawer.open{display:block}
+.panel{position:absolute;right:0;top:0;bottom:0;width:min(420px,100%);background:var(--bg);padding:20px;padding-top:calc(20px + env(safe-area-inset-top,0px));overflow:auto;animation:sl .25s}
+@keyframes sl{from{transform:translateX(30px);opacity:0}}
+.tot{display:flex;justify-content:space-between;font-size:.92rem;padding:3px 0}
+.tot.g{font-weight:700;font-size:1.1rem;border-top:1px solid var(--line);margin-top:6px;padding-top:8px}
+.bn{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;background:var(--card);border-top:1px solid var(--line);padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px))}
+.bn button{flex:1;background:none;border:0;padding:6px 0;font-size:.68rem;cursor:pointer;color:var(--mut);display:grid;gap:0}
+.bn button span{font-size:1.25rem}.bn button.on{color:var(--terra);font-weight:600}
+@media(min-width:800px){.bn{display:none}body{padding-bottom:0}}
+.toast{position:fixed;left:50%;bottom:96px;transform:translateX(-50%);background:#242424;color:#fff;padding:10px 18px;border-radius:99px;z-index:60;font-size:.88rem;opacity:0;pointer-events:none;transition:opacity .25s}
+.toast.on{opacity:1}
+.empty{text-align:center;padding:40px 10px;color:var(--mut)}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-size:.88rem}
+.view{animation:vi .3s}
+@keyframes vi{from{opacity:0;transform:translateY(8px)}}
+.tw{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.tw .chip[aria-pressed=true]{background:var(--terra);border-color:var(--terra);color:#fff}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.card{border-radius:22px;transition:transform .2s,box-shadow .2s;box-shadow:0 2px 6px rgba(90,55,20,.05)}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(90,55,20,.13)}
+.card .pic{height:168px;background:radial-gradient(circle at 50% 42%,rgba(255,255,255,.75),transparent 62%),repeating-linear-gradient(90deg,rgba(120,80,40,.05) 0 2px,transparent 2px 14px),var(--bgc)}
+.card .pic svg{width:138px;height:138px;transition:transform .5s}.card:hover .pic svg{transform:scale(1.07) rotate(4deg)}
+.card .pic span.bd{background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.avatar{background:linear-gradient(135deg,var(--gold),var(--terra));color:#fff;font-weight:700;font-size:1.3rem;letter-spacing:.02em;border:3px solid var(--card)}
+.pfh .avatar{border-color:var(--bg)}
+section{padding:54px 0}section h2+.sub{margin-top:8px}
+.thali{background:none!important;box-shadow:none!important;border-radius:0!important;animation:fl 7s ease-in-out infinite}
+.thali svg{width:100%;height:100%;filter:drop-shadow(0 24px 26px rgba(120,60,20,.28))}
+.fchip{position:absolute;left:-4%;bottom:6%;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:9px 13px;font-size:.74rem;color:var(--mut);box-shadow:0 10px 24px rgba(90,55,20,.18);line-height:1.4}
+.fchip b{display:block;color:var(--ink);font-size:.82rem}.fchip.f2{left:auto;right:-2%;top:6%;bottom:auto;color:var(--ink);font-weight:600}
+.hero{padding:44px 0 26px}
+.strip{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden;margin:26px 0 0}
+.strip div{background:var(--card);padding:14px 16px;font-size:.82rem;color:var(--mut)}.strip b{display:block;font-size:1.25rem;color:var(--terra)}
+@media(min-width:700px){.strip{grid-template-columns:repeat(4,1fr)}}
+.step{border-radius:20px;transition:transform .2s}.step:hover{transform:translateY(-2px)}
+.step .ic{width:46px;height:46px;border-radius:14px;background:color-mix(in srgb,var(--gold) 30%,var(--card));display:grid;place-items:center;margin-bottom:8px}
+.chips{position:sticky;top:calc(63px + env(safe-area-inset-top,0px));background:var(--bg);z-index:5;padding:10px 0}
+.cover{height:150px;border-radius:24px;background:radial-gradient(circle at 20% 30%,var(--gold) 0 14%,transparent 15%),radial-gradient(circle at 80% 70%,var(--sage) 0 18%,transparent 19%),repeating-linear-gradient(45deg,var(--terra) 0 14px,#b9502f 14px 28px);margin:16px 0 -34px}
+.th{width:52px;height:52px;flex:none;background:var(--bgc,#f6e2c3);border-radius:12px;display:grid;place-items:center}.th svg{width:42px;height:42px}
+.fg3{display:grid;gap:22px}@media(min-width:760px){.fg3{grid-template-columns:1.4fr 1fr 1fr 1.4fr}}
+footer a{text-decoration:none}footer a:hover{color:var(--terra)}footer p{margin:6px 0}
+@media(max-width:520px){.fchip.f2{display:none}.fchip{left:0}}
+</style></head>
+<body>
+<header><div class="wrap bar">
+<button class="logo" onclick="go('home')" aria-label="Aangan home">Aangan<small>ghar jaisa khana, ghar se</small></button>
+<nav class="top" aria-label="Main">
+<button data-v="home" onclick="go('home')">Home</button><button data-v="discover" onclick="go('discover')">Find food</button><button data-v="plans" onclick="go('plans')">Meal plans</button><button data-v="cook" onclick="go('join')">Become a home cook</button></nav>
+<button class="btn sm cartb" onclick="openCart()" aria-label="Open cart">🛒 <span id="cc">0</span></button>
+</div></header>
+<main id="app" class="wrap"></main>
+<footer><div class="wrap fg3"><div><b style="color:var(--terra);font-size:1.3rem">Aangan</b><p>Made at home. Made with care.<br>Launching in Bhilai, Chhattisgarh.</p></div><div><b>Eat</b><p><a href="#" onclick="go('discover');return false">Find homemade food</a><br><a href="#" onclick="go('plans');return false">Meal plans</a></p></div><div><b>Cook</b><p><a href="#" onclick="go('join');return false">Become a home cook</a><br>Kitchen verification</p></div><div><b>Trust</b><p>Demo prototype. All cooks, reviews and prices are fictional.</p></div></div></footer>
+<nav class="bn" aria-label="Mobile">
+<button data-v="home" onclick="go('home')"><span>🏡</span>Home</button>
+<button data-v="discover" onclick="go('discover')"><span>🍛</span>Find food</button>
+<button data-v="plans" onclick="go('plans')"><span>📅</span>Plans</button>
+<button data-v="join" onclick="go('join')"><span>👩‍🍳</span>Cook</button>
+<button onclick="openCart()"><span>🛒</span>Cart</button></nav>
+<div class="drawer" id="dr" onclick="if(event.target===this)closeCart()"><div class="panel" id="pn" role="dialog" aria-modal="true" aria-label="Your cart"></div></div>
+<div class="toast" id="ts" role="status" aria-live="polite"></div>
+<script>
+const CFG={delivery:20,platformPct:0.05,coupons:{GHAR10:0.10}}; // admin-configurable in production
+const AREAS=["All areas","Nehru Nagar","Supela","Civic Centre","Risali","Bhilai Nagar","Durg"];
+const C=[
+{n:"Sunita Sharma",a:"Nehru Nagar",c:"North Indian",y:12,r:4.9,m:328,km:1.2,e:"👩‍🍳",q:"I started cooking for my family and friends. Now I want to share the same food with people who miss home."},
+{n:"Meena Verma",a:"Supela",c:"Chhattisgarhi",y:9,r:4.8,m:412,km:2.1,e:"🧕",q:"From cooking for my family to serving 40 meals a day. Chila and fara are my signature."},
+{n:"Kavita Nair",a:"Civic Centre",c:"South Indian",y:7,r:4.7,m:190,km:0.8,e:"👩",q:"My mother's sambar recipe travelled from Kerala to Bhilai. I cook it the same way."},
+{n:"Harpreet Kaur",a:"Risali",c:"Punjabi",y:15,r:4.9,m:520,km:3.0,e:"👩‍🦳",q:"Butter, patience and a slow tadka. That is all Punjabi food needs."},
+{n:"Shalini Das",a:"Bhilai Nagar",c:"Bengali",y:11,r:4.8,m:260,km:2.6,e:"👩‍🍳",q:"Maacher jhol on Sundays is a tradition I brought with me to Bhilai."},
+{n:"Rekha Jain",a:"Durg",c:"Jain",y:8,r:4.6,m:150,km:5.2,e:"🧑‍🍳",q:"No onion, no garlic, no compromise on taste. Pure, simple, satvik."},
+{n:"Pooja Tiwari",a:"Supela",c:"Student meals",y:5,r:4.5,m:610,km:1.9,e:"👩‍🎓",q:"I cook for 25 hostel students daily. Full thali, fair price, no drama."},
+{n:"Anita Singh",a:"Risali",c:"Healthy",y:6,r:4.8,m:205,km:3.4,e:"🧘‍♀️",q:"Less oil, more dal, millets and love. Healthy food should still feel like home."},
+{n:"Lata Sahu",a:"Nehru Nagar",c:"Chhattisgarhi",y:20,r:4.9,m:730,km:1.5,e:"👵",q:"Twenty years of chana-bhaji and thethri-khurma, cooked on a wood-smoke memory."},
+{n:"Farida Khan",a:"Civic Centre",c:"Mughlai",y:14,r:4.7,m:340,km:1.1,e:"👩‍🍳",q:"Sunday biryani was our family ritual. Now it can be yours too."}];
+const M=[
+["Dal Chawal Thali",0,90,"Lunch",1,["North Indian","Budget"],30,"🍛"],["Rajma Chawal",0,110,"Lunch",1,["North Indian"],35,"🍲"],
+["Chila with Chutney",1,60,"Breakfast",1,["Chhattisgarhi","Budget"],20,"🥞"],["Fara & Aamat Thali",1,120,"Lunch",1,["Chhattisgarhi"],40,"🍱"],
+["Idli Sambar",2,70,"Breakfast",1,["South Indian","Healthy"],25,"🍚"],["Curd Rice & Pickle",2,80,"Lunch",1,["South Indian","Healthy"],20,"🥣"],
+["Butter Paneer Thali",3,150,"Dinner",1,["Punjabi"],40,"🧈"],["Chicken Curry Meal",3,170,"Dinner",0,["Punjabi"],45,"🍗"],
+["Maacher Jhol Bhat",4,180,"Lunch",0,["Bengali"],45,"🐟"],["Khichuri & Begun Bhaja",4,120,"Dinner",1,["Bengali"],35,"🍛"],
+["Jain Dal Roti Thali",5,110,"Lunch",1,["Jain"],35,"🫓"],["Jain Sabzi Roti Combo",5,100,"Dinner",1,["Jain","Budget"],30,"🥘"],
+["Hostel Special Thali",6,70,"Lunch",1,["Student meals","Budget"],20,"🍽️"],["Egg Curry Rice",6,80,"Dinner",0,["Student meals","Budget"],25,"🥚"],
+["Millet Khichdi Bowl",7,100,"Dinner",1,["Healthy"],30,"🥗"],["Moong Dal Chilla Wrap",7,90,"Breakfast",1,["Healthy"],20,"🌯"],
+["Chana Bhaji & Bara",8,85,"Breakfast",1,["Chhattisgarhi","Budget"],25,"🍘"],["Thethri Khurma Box",8,140,"Dinner",1,["Chhattisgarhi"],40,"🍪"],
+["Chicken Biryani",9,190,"Lunch",0,["Mughlai"],55,"🍗"],["Veg Dum Biryani",9,140,"Dinner",1,["Mughlai"],45,"🍚"]
+].map((x,i)=>({id:i,n:x[0],c:x[1],p:x[2],t:x[3],v:!!x[4],g:x[5],d:x[6],e:x[7]}));
+const REV=[["Rohit, NIT student","Tastes exactly like my mother's dal. Portion was generous."],["Priya, Nurse","Timely lunch every day this month. Packaging was clean and neat."],["Amit, Factory supervisor","₹90 for a full thali. Honest food, honest price."]];
+
+const DK=[["thali","#e6a93a","#5f8f4a"],["bowl","#9b3a26","#f3e3b0"],["flat","#d9b25e","#7a9e7e"],["thali","#c98a3b","#8a4b2a"],["idli","#f4efe4","#c85c3a"],["rice","#f6f2e8","#e7b84b"],["bowl","#d9822b","#f0d9a0"],["bowl","#a8421f","#f3e3b0"],["bowl","#b5532a","#f3ecd9"],["rice","#e7c15a","#4a8a3f"],["thali","#e0a93c","#7a9e7e"],["thali","#b5652f","#5f8f4a"],["thali","#e6a93a","#a0432a"],["bowl","#e0a032","#f6f0e0"],["rice","#c9b06a","#7a9e7e"],["flat","#c9d88a","#7a9e7e"],["snack","#c98a3b","#e7b84b"],["snack","#b56a3a","#d9a05a"],["rice","#e0a92e","#a8421f"],["rice","#e6c86a","#5f8f4a"]];
+function dish(id){const[k,a,b]=DK[id],pt=(i,R)=>{const t=(id*2.3+i*2.4)%6.283,d=R*(.35+((id*7+i*13)%10)/16);return[100+d*Math.cos(t),100+d*Math.sin(t)]};
+const dots=(n,R,c,r)=>Array.from({length:n},(_,i)=>{const[x,y]=pt(i,R);return`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r}" fill="${c}"/>`}).join("");
+const bw=(x,y,r,c,g)=>`<circle cx="${x}" cy="${y}" r="${r}" fill="#c9bd9c"/><circle cx="${x}" cy="${y}" r="${r-3}" fill="${c}"/><circle cx="${x-r/3}" cy="${y-r/3}" r="${r/3}" fill="#fff" opacity=".22"/>${g?`<circle cx="${x+r/4}" cy="${y+r/5}" r="2.5" fill="#5f8f4a"/><circle cx="${x-r/5}" cy="${y+r/3}" r="2" fill="#5f8f4a"/>`:""}`;
+let f;
+if(k=="thali")f=bw(62,64,28,a,1)+bw(140,64,25,b,1)+bw(56,140,22,"#d8c07a")+`<circle cx="140" cy="142" r="30" fill="#e6c380"/><circle cx="140" cy="142" r="30" fill="none" stroke="#c49a55" stroke-width="2" stroke-dasharray="3 5"/><ellipse cx="100" cy="104" rx="22" ry="15" fill="#fffaf0"/><circle cx="93" cy="101" r="2.5" fill="#e6dcc4"/><circle cx="106" cy="108" r="2.5" fill="#e6dcc4"/>`;
+else if(k=="bowl")f=bw(100,96,56,a)+dots(9,44,"rgba(0,0,0,.18)",6)+dots(6,40,"#5f8f4a",2.5)+`<ellipse cx="148" cy="150" rx="28" ry="21" fill="#fffaf0"/><ellipse cx="148" cy="146" rx="22" ry="12" fill="${b}"/>`;
+else if(k=="rice")f=`<ellipse cx="100" cy="108" rx="66" ry="54" fill="${a}"/><ellipse cx="86" cy="92" rx="34" ry="24" fill="#fff" opacity=".2"/>`+dots(16,54,b,4)+dots(10,50,"rgba(0,0,0,.14)",3)+bw(150,52,22,"#fffaf0")+`<circle cx="150" cy="52" r="10" fill="#e8d9a8"/>`;
+else if(k=="flat")f=`<circle cx="84" cy="102" r="50" fill="${a}"/><circle cx="84" cy="102" r="50" fill="none" stroke="rgba(0,0,0,.15)" stroke-width="3"/>${dots(10,40,"rgba(0,0,0,.14)",4)}<path d="M100 60a46 46 0 0 1 0 90z" fill="${a}" stroke="rgba(0,0,0,.18)" stroke-width="3"/>`+bw(152,52,22,b,1);
+else if(k=="idli")f=[[66,96],[114,76],[104,124]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="27" fill="#e5dccb"/><circle cx="${x}" cy="${y-2}" r="25" fill="${a}"/><circle cx="${x-8}" cy="${y-9}" r="8" fill="#fff" opacity=".6"/>`).join("")+bw(150,150,32,b,1);
+else f=[[64,70,-20],[112,60,15],[80,116,10],[128,112,-15]].map(([x,y,r])=>`<g transform="rotate(${r} ${x} ${y})"><rect x="${x-24}" y="${y-16}" width="48" height="32" rx="16" fill="${a}"/><rect x="${x-24}" y="${y-16}" width="48" height="32" rx="16" fill="none" stroke="rgba(0,0,0,.18)" stroke-width="2"/>${dots(3,0,b,2)}</g>`).join("")+bw(150,150,26,b,1);
+return`<svg viewBox="0 0 200 200" role="img" aria-label="Illustration of ${M[id].n}"><circle cx="100" cy="106" r="92" fill="#000" opacity=".12"/><circle cx="100" cy="100" r="90" fill="#fbf7ec"/><circle cx="100" cy="100" r="90" fill="none" stroke="#dccfb2" stroke-width="5"/><circle cx="100" cy="100" r="76" fill="none" stroke="#eadfc6" stroke-width="1.5"/>${f}</svg>`}
+const mono=c=>c.n.split(" ").map(w=>w[0]).join("");
+const S={v:"home",cook:null,cart:[],q:"",f:new Set(),area:"All areas",coupon:0,plan:{slots:new Set(["Lunch"]),days:30}};
+const $=s=>document.querySelector(s),inr=n=>"₹"+Math.round(n);
+const stars=r=>`<span aria-label="Rated ${r} out of 5">⭐ ${r}</span>`;
+const vd=v=>`<span class="veg ${v?"":"nv"}" title="${v?"Vegetarian":"Non-vegetarian"}" role="img" aria-label="${v?"Vegetarian":"Non-vegetarian"}"></span>`;
+const BG=["#f6e2c3","#dfe9d8","#f3d6c8","#f7ecc4"];
+function toast(t){const e=$("#ts");e.textContent=t;e.classList.add("on");clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove("on"),2200)}
+function go(v,arg){S.v=v;if(arg!==undefined)S.cook=arg;render();scrollTo({top:0})}
+function mealCard(m){const c=C[m.c];return `<article class="card"><div class="pic" style="--bgc:${BG[m.id%4]}">${dish(m.id)}<span class="bd">🏡 Homemade</span></div><div class="bd2">
+<div class="row"><h3>${m.n}</h3>${vd(m.v)}</div>
+<button class="meta" style="background:none;border:0;padding:0;text-align:left;cursor:pointer;text-decoration:underline" onclick="go('cook',${m.c})">by ${c.n}</button>
+<div class="meta">${m.t} · ${c.km} km · ${m.d} min · ${stars(c.r)}</div>
+<div class="row" style="margin-top:auto"><span class="price">${inr(m.p)}</span><button class="btn sm" onclick="add(${m.id})">Add to cart</button></div></div></article>`}
+function cookCard(i){const c=C[i];return `<article class="card" style="padding:16px;gap:8px"><div class="pfh"><div class="avatar" aria-hidden="true">${mono(c)}</div><div><h3>${c.n}</h3><div class="meta">${c.a} · ${c.km} km</div></div></div>
+<div class="meta">${c.c} · ${c.y} years cooking</div><div class="meta">${stars(c.r)} · ${c.m} meals served</div>
+<span class="tag" style="background:var(--sage);color:#10240f;width:fit-content">✔ Verified kitchen</span>
+<p style="font-size:.9rem">“${c.q}”</p><button class="btn alt sm" style="margin-top:auto" onclick="go('cook',${i})">Meet ${c.n.split(" ")[0]}</button></article>`}
+function list(){let q=S.q.toLowerCase(),mx=(q.match(/(?:under|below|<)\s*₹?\s*(\d+)/)||[])[1];
+const w=q.replace(/(under|below)\s*₹?\s*\d+|near me|home food|meals?|food/g,"").split(/\s+/).filter(Boolean),F=S.f,slots=["Breakfast","Lunch","Dinner"].filter(s=>F.has(s));
+return M.filter(m=>{const c=C[m.c],h=(m.n+" "+m.g.join(" ")+" "+m.t+" "+c.n+" "+c.a+" "+c.c+" "+(m.v?"veg vegetarian":"non-veg")+" subscription").toLowerCase();
+if(mx&&m.p>+mx)return 0;if(!w.every(x=>h.includes(x)))return 0;if(S.area!=="All areas"&&c.a!==S.area)return 0;
+if(slots.length&&!slots.includes(m.t))return 0;if(F.has("Veg")&&!m.v)return 0;if(F.has("Non-veg")&&m.v)return 0;
+for(const t of ["Jain","Healthy"])if(F.has(t)&&!m.g.includes(t))return 0;if(F.has("Budget")&&m.p>100)return 0;if(F.has("Top rated")&&c.r<4.8)return 0;return 1}).sort((a,b)=>C[a.c].km-C[b.c].km)}
+function discover(){const ch=["Breakfast","Lunch","Dinner","Veg","Non-veg","Jain","Healthy","Budget","Top rated"];
+return `<section class="view"><h2>Homemade meals near you</h2><p class="sub">Try “dal chawal”, “healthy lunch”, “punjabi” or “home food under ₹100”.</p>
+${searchBar()}<div class="chips" role="group" aria-label="Filters">${ch.map(x=>`<button class="chip" aria-pressed="${S.f.has(x)}" onclick="tf('${x}')">${x}</button>`).join("")}</div>
+<div id="res"></div></section>`}
+function res(){const l=list();$("#res").innerHTML=l.length?`<p class="meta">${l.length} meals from ${new Set(l.map(m=>m.c)).size} home kitchens</p><div class="grid">${l.map(mealCard).join("")}</div>`:`<div class="empty"><div style="font-size:2.5rem">🍲</div><p><b>No meals match yet.</b></p><p>Clear a filter or pick “All areas”.</p><button class="btn sm" onclick="S.f.clear();S.q='';S.area='All areas';render()">Reset filters</button></div>`}
+function tf(x){S.f.has(x)?S.f.delete(x):S.f.add(x);render()}
+function searchBar(){return `<div class="search" role="search"><label class="sr" for="q" style="position:absolute;left:-9999px">Search meals</label><input id="q" type="search" placeholder="Search dal chawal, healthy lunch…" value="${S.q.replace(/"/g,"&quot;")}" oninput="S.q=this.value;if(S.v!=='discover'){}else res()" onkeydown="if(event.key==='Enter'&&S.v!=='discover')go('discover')">
+<select aria-label="Area" onchange="S.area=this.value;if(S.v==='discover')res()">${AREAS.map(a=>`<option ${a===S.area?"selected":""}>${a}</option>`).join("")}</select>
+<button class="btn" onclick="go('discover')">Find homemade food</button></div>`}
+function home(){const top=[...M].sort((a,b)=>C[b.c].r-C[a.c].r).slice(0,6);
+return `<div class="view"><div class="hero"><div><h1>Ghar ka swaad, <span class="hl">ab aapke sheher mein.</span></h1>
+<p class="sub" style="font-size:1.08rem">Discover fresh homemade meals prepared by local home cooks in Bhilai and delivered to your doorstep. Your next meal might come from a home just around the corner.</p>
+<div class="cta"><button class="btn" onclick="go('discover')">Find Homemade Food</button><button class="btn alt" onclick="go('join')">Become a Home Cook</button></div></div>
+<div class="thali">${dish(0)}<div class="fchip"><b>Sunita Aunty</b>Nehru Nagar · 1.2 km · ⭐ 4.9<br>Dal Chawal Thali, ₹90</div><div class="fchip f2">🏡 Cooked in a real home kitchen</div></div></div>
+${searchBar()}
+<div class="strip"><div><b>10</b>home kitchens</div><div><b>3,700+</b>meals served</div><div><b>from ₹60</b>a meal</div><div><b>6</b>areas in Bhilai–Durg</div></div><section><h2>Missing ghar ka khana?</h2><p class="sub">Because sometimes you don't need a restaurant. You need home.</p>
+<div class="steps">${[["🎓","Living away from home?","Hostel and PG meals from ₹70 a thali."],["💼","Busy day at work?","Lunch that arrives on time, every weekday."],["🏭","Long shift ahead?","Filling, honest meals for factory and site workers."],["👵","Cooking for one?","Small portions and light food for seniors."]].map(x=>`<div class="step"><div class="ic">${x[0]}</div><h3>${x[1]}</h3><p class="meta">${x[2]}</p></div>`).join("")}</div></section>
+<section><h2>Today's homemade meals</h2><div class="grid">${top.map(mealCard).join("")}</div></section>
+<section><h2>How it works</h2><div class="two"><div><h3>For customers</h3><div class="steps">${["Discover a home cook","Choose your meal","Place your order","Enjoy homemade food"].map((t,i)=>`<div class="step"><b style="color:var(--terra)">${i+1}</b> ${t}</div>`).join("")}</div></div>
+<div><h3>For home cooks</h3><div class="steps">${["Create your profile","Add your menu","Accept orders","Cook and earn"].map((t,i)=>`<div class="step"><b style="color:var(--sageD)">${i+1}</b> ${t}</div>`).join("")}</div></div></div></section>
+<section><h2>Meet your neighbourhood cooks</h2><div class="grid">${[0,1,3,8].map(cookCard).join("")}</div></section>
+<section><h2>More than a meal</h2><p class="sub">Customers get homemade food. Homemakers get an income. The community gets affordable local food.</p><div class="two" style="margin-top:16px">
+<div class="story"><b>Stories from our kitchens</b><q>“From cooking for her family to serving 40 meals a day.”</q><span class="meta" style="color:#4a4238">Meet Meena, Supela</span></div>
+<div class="story"><b>What customers say</b>${REV.map(r=>`<q style="font-size:.92rem">“${r[1]}” <span class="meta" style="color:#4a4238">— ${r[0]}</span></q>`).join("")}</div></div></section>
+<section><div class="band"><h2>Turn your cooking into an opportunity.</h2><p>Earn from home, set your own menu and hours, and reach customers nearby. Manage everything from one dashboard.</p><button class="btn" onclick="go('join')" style="margin-top:12px">Become a Home Cook</button></div></section>
+<section><h2>Trust and safety</h2><div class="steps">${[["✔","Verified kitchens","Every kitchen is reviewed before it goes live."],["🪪","Identity checked","Cooks verify identity and address."],["🧼","Hygiene standards","Clean utensils, covered food, fresh packing."],["⭐","Detailed reviews","Rate taste, quality, packaging, portion and timing."]].map(x=>`<div class="step"><div class="ic">${x[0]}</div><h3>${x[1]}</h3><p class="meta">${x[2]}</p></div>`).join("")}</div></section>
+<section><h2>Questions</h2>${[["Which areas do you serve?","Nehru Nagar, Supela, Civic Centre, Risali, Bhilai Nagar and Durg, with more cities to follow."],["Can I pause a subscription?","Yes. Skip a day, pause, or change your meal from your dashboard."],["How is payment handled?","UPI, cards, wallets and cash on delivery where available."]].map(x=>`<details><summary>${x[0]}</summary><p class="meta">${x[1]}</p></details>`).join("")}</section></div>`}
+function cookPage(){const i=S.cook,c=C[i],ms=M.filter(m=>m.c===i);
+return `<section class="view"><button class="btn alt sm" onclick="go('discover')">← Back</button>
+<div class="cover" role="img" aria-label="Decorative pattern"></div><div class="pfh" style="margin:0 0 18px;padding:0 20px"><div class="avatar" style="width:90px;height:90px;font-size:2.8rem" aria-hidden="true">${mono(c)}</div><div><h1 style="font-size:2rem">Meet ${c.n}</h1><p class="meta">${c.a}, Bhilai · ${c.c}</p>
+<span class="tag" style="background:var(--sage);color:#10240f">✔ Verified kitchen</span> <span class="tag">🧼 Hygiene badge</span></div></div>
+<div><span class="stat"><b>${c.r} ⭐</b>rating</span><span class="stat"><b>${c.m}</b>meals served</span><span class="stat"><b>${c.y} yrs</b>cooking</span></div>
+<div class="story" style="margin:18px 0"><b>Her story</b><q>“${c.q}”</q><span class="meta" style="color:#4a4238">Cooking isn't just what I do. It's how I care for people.</span></div>
+<h2>Menu</h2><div class="grid">${ms.map(mealCard).join("")}</div>
+<h2 style="margin-top:34px">What customers say</h2><div class="grid">${REV.map(r=>`<div class="card" style="padding:16px;gap:6px"><div class="row"><b>${r[0]}</b><span class="tag" style="background:var(--sage);color:#10240f">✔ Verified order</span></div><p style="font-size:.92rem">“${r[1]}”</p><div class="meta">Taste ⭐5 · Quality ⭐5 · Packaging ⭐4 · Portion ⭐5 · Timeliness ⭐5</div></div>`).join("")}</div><div style="margin-top:24px"><button class="btn" onclick="ordFrom(${i})">Order from this cook</button> <button class="btn alt" onclick="go('plans')">Subscribe to ${c.n.split(" ")[0]}'s meals</button></div></section>`}
+function ordFrom(i){M.filter(m=>m.c===i).slice(0,1).forEach(m=>add(m.id));openCart()}
+const PRICE={Breakfast:45,Lunch:80,Dinner:80};
+function plans(){const p=S.plan,base=[...p.slots].reduce((a,s)=>a+PRICE[s],0),off=p.days===30?.12:.05,tot=base*p.days*(1-off);
+return `<section class="view"><h2>Meal subscriptions</h2><p class="sub">Ghar ka khana every day. Skip a day, pause, change your meal or choose your preferred cook, any time.</p>
+<h3 style="margin-top:18px">Which meals?</h3><div class="tw">${["Breakfast","Lunch","Dinner"].map(s=>`<button class="chip" aria-pressed="${p.slots.has(s)}" onclick="p2('${s}')">${s}</button>`).join("")}</div>
+<h3>How long?</h3><div class="tw">${[[1,"Daily"],[7,"Weekly"],[30,"Monthly"]].map(d=>`<button class="chip" aria-pressed="${p.days===d[0]}" onclick="S.plan.days=${d[0]};render()">${d[1]} plan</button>`).join("")}</div>
+<div class="plan pop" style="max-width:440px">${p.days===30?'<span class="tag">Best value: save 12%</span>':""}<h3 style="margin-top:6px">${p.days===30?"Monthly":p.days===7?"Weekly":"Daily"} Ghar Ka Khana</h3>
+<p>${p.days} days × ${[...p.slots].join(" + ")||"pick a meal"}</p><div class="price" style="font-size:1.8rem">${p.slots.size?inr(p.days===1?base:tot):"—"}</div><p class="meta">${p.slots.size?inr((p.days===1?base:tot)/p.days/p.slots.size)+" per meal":""}</p>
+<ul><li>Choose your preferred cook</li><li>Skip a day or pause</li><li>Change your meal</li></ul>
+<button class="btn" ${p.slots.size?"":"disabled"} onclick="toast('Subscription request sent to your cook. Payment step comes next.')">Start plan</button></div></section>`}
+function p2(s){const x=S.plan.slots;x.has(s)?x.delete(s):x.add(s);render()}
+function join(){return `<section class="view"><h2>Turn your cooking into an opportunity.</h2><p class="sub">Earn from home. Decide your menu, hours and delivery area. We bring nearby customers.</p>
+<form onsubmit="event.preventDefault();verify()" class="fg" style="margin-top:14px"><div><label for="a">Full name</label><input class="f" id="a" required autocomplete="name"></div><div><label for="b">Phone</label><input class="f" id="b" type="tel" required inputmode="tel"></div>
+<div><label for="c">Kitchen area</label><select class="f" id="c">${AREAS.slice(1).map(a=>`<option>${a}</option>`)}</select></div><div><label for="d">Speciality</label><input class="f" id="d" placeholder="e.g. Punjabi home food" required></div>
+<div><label for="e">Meals per day you can cook</label><input class="f" id="e" type="number" min="1" max="200" value="10"></div><div><label for="g">Years of experience</label><input class="f" id="g" type="number" min="0" max="60" value="5"></div>
+<div style="grid-column:1/-1"><button class="btn" style="margin-top:14px">Submit for verification</button></div></form><div id="vs"></div></section>`}
+function verify(){const st=["Pending verification","Under review","Verified"];let i=0;const e=$("#vs");const draw=()=>e.innerHTML=`<h3 style="margin-top:22px">Verification status</h3><div class="tl">${st.map((s,j)=>`<span class="${j<=i?"on":""}">${s}</span>`).join("")}</div><p class="meta">Demo: statuses advance automatically. In production, admins review documents and photos of your kitchen.</p>`;draw();const t=setInterval(()=>{i++;draw();if(i>1)clearInterval(t)},1600)}
+function add(id){const x=S.cart.find(i=>i.id===id);x?x.q++:S.cart.push({id,q:1});upd();toast(M[id].n+" added")}
+function upd(){$("#cc").textContent=S.cart.reduce((a,i)=>a+i.q,0)}
+function openCart(){cart();$("#dr").classList.add("open")}function closeCart(){$("#dr").classList.remove("open")}
+function chq(id,d){const x=S.cart.find(i=>i.id===id);x.q+=d;if(x.q<1)S.cart=S.cart.filter(i=>i!==x);upd();cart()}
+function coupon(){const v=$("#cp").value.trim().toUpperCase();S.coupon=CFG.coupons[v]||0;toast(S.coupon?"Coupon applied":"That code isn't valid");cart()}
+function cart(){const sub=S.cart.reduce((a,i)=>a+M[i.id].p*i.q,0),dl=S.cart.length?CFG.delivery:0,pf=sub*CFG.platformPct,ds=sub*S.coupon,tot=sub+dl+pf-ds;
+$("#pn").innerHTML=`<div class="row"><h2>Your cart</h2><button class="btn alt sm" onclick="closeCart()">Close</button></div>`+(S.cart.length?
+S.cart.map(i=>{const m=M[i.id];return `<div class="row" style="padding:10px 0;border-bottom:1px solid var(--line)"><div class="row" style="justify-content:flex-start"><div class="th">${dish(m.id)}</div><div><b>${m.n}</b><div class="meta">${C[m.c].n} · ${inr(m.p)}</div></div></div><div class="row"><button class="btn alt sm" aria-label="Remove one" onclick="chq(${m.id},-1)">−</button>${i.q}<button class="btn alt sm" aria-label="Add one" onclick="chq(${m.id},1)">+</button></div></div>`}).join("")+
+`<label for="cp">Coupon (try GHAR10)</label><div class="row"><input class="f" id="cp"><button class="btn sm" onclick="coupon()">Apply</button></div>
+<label for="ad">Delivery</label><select class="f" id="ad"><option>Cook delivery</option><option>Pickup from cook</option><option>Platform delivery partner</option></select>
+<label for="pm">Payment</label><select class="f" id="pm"><option>UPI</option><option>Card</option><option>Net banking</option><option>Wallet</option><option>Cash on delivery</option></select>
+<div style="margin:14px 0"><div class="tot"><span>Meals</span><span>${inr(sub)}</span></div><div class="tot"><span>Delivery fee</span><span>${inr(dl)}</span></div><div class="tot"><span>Platform fee</span><span>${inr(pf)}</span></div><div class="tot"><span>Discount</span><span>−${inr(ds)}</span></div><div class="tot g"><span>Total</span><span>${inr(tot)}</span></div></div>
+<button class="btn" style="width:100%" onclick="place()">Place order</button>`:`<div class="empty"><div style="font-size:2.5rem">🥘</div><p><b>Your cart is empty.</b></p><button class="btn sm" onclick="closeCart();go('discover')">Find homemade food</button></div>`)}
+function place(){S.cart=[];upd();const st=["Order received","Cooking","Ready","Picked up","Out for delivery","Delivered"];let i=0;
+const draw=()=>$("#pn").innerHTML=`<div class="row"><h2>Order placed</h2><button class="btn alt sm" onclick="closeCart()">Close</button></div><p class="meta">Your cook has been notified. Live tracking (demo):</p><div class="tl" aria-live="polite">${st.map((s,j)=>`<span class="${j<=i?"on":""}">${s}</span>`).join("")}</div>${i===5?'<p><b>Enjoy your ghar ka khana! 🏡</b></p><p class="meta">Rate taste, quality, packaging, portion and timeliness from your dashboard.</p>':""}`;
+draw();const t=setInterval(()=>{i++;draw();if(i>=5)clearInterval(t)},1400)}
+function render(){document.querySelectorAll("[data-v]").forEach(b=>b.classList.toggle("on",b.dataset.v===S.v||(S.v==="join"&&b.dataset.v==="cook")));
+$("#app").innerHTML={home,discover,cook:cookPage,plans,join}[S.v==="cook"?"cook":S.v]();if(S.v==="discover")res();document.title="Aangan — "+({home:"Ghar ka swaad, aapke sheher mein",discover:"Find homemade food in Bhilai",cook:C[S.cook||0].n,plans:"Meal subscriptions",join:"Become a home cook"})[S.v]}
+render();
+</script></body></html>
